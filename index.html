@@ -6,20 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Autobusy ZTM</h1>
     </header>
     <main>
-        <form action="" method="POST">
+        <form name="formularz" method="POST">
             <fieldset>
                 <legend>Wybierz bilet</legend>
+                <label for="imie">Imię</label>
                 <input name="imie" id="imie" type="text">
+                <label for="nazwisko">Nazwisko</label>
                 <input name="nazwisko" id="nazwisko" type="text">
+                <label for="email">Email</label>
                 <input name="email" id="email" type="email">
+                <label for="temp">Choose a comfortable temperature:</label><br />
+                <input min=0 max=4 step=1 type="range" id="wbyor1" name="miejsce" list="miejsce" />
 
+                <datalist id="miejsce">
+                <option value="">a</option>
+                <option value="25">b</option>
+                <option value="50"></option>
+                 <option value="75"></option>
+                <option value="100"></option>
+                </datalist>
+                <label for="przystaneks">Przystanek początkowy:</label>
+                <select name="przystaneks" id="przystaneks">
+                    <option>Centrum</option>
+                    <option>Rogatka</option>
+                    <option>Bojszow</option>
+                    <option>Stadion</option>
+                </select>
+                <select name="przyjazd" id="przyjazd">
+                    <option></option>
+                </select>
+
+                <label for="przystanekk">Przystanek końcowy:</label>
+                <select name="przystanekk" id="przystaneks">
+                    <option>Centrum</option>
+                    <option>Rogatka</option>
+                    <option>Bojszow</option>
+                    <option>Stadion</option>
+                </select>
+                <label for="ulgowy">Ulgowy</label>
+                <input type="radio" name="bilet" value="ulgowy" id="ulgowy">
+                <label for="normalny">Normalny</label>
+                <input type="radio" name="bilet" value="normalny" id="normalny">
+                
+                <div id="a"></div>
+                <button type="button" onclick="odjazd()">Kliknij<button>
             </fieldset>
+            <input type="submit" value="Zakup">
         </form>
     </main>
     <footer></footer>
