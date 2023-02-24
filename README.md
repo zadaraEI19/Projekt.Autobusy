@@ -29,3 +29,9 @@ godziny, 9 ; 9 15 ; 9 40 ; 10
 Zadara - JS 
 Nonoń - HTML + CSS
 Pieter - BAZA DANYCH
+
+nazwy przystanków
+1.przystanek_Centrum
+2.przystanek_Rogatka
+3.przystanek_Bojszow
+4.przystanek_Stadion
