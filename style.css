@@ -1,35 +1,36 @@
-*{
+* {
     font-family: "Century Gothic";
     margin: 0;
     padding: 0;
 }
+body {
+    background-image: url("images/3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
 
-header{
+header {
+    padding: 3em;
     text-align: center;
     justify-content: center;
 }
 form {
+    display: grid;
     font-family: "Century Gothic";
-    width: 500px;
-    height: auto;
-    margin: auto;
-    background-color: rgb(255, 255, 255);
-    padding: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 5px so;
+}
+main {
+    align-items: center;
     display: flex;
-    display: block;
     flex-direction: column;
-    border-radius: 15px;
-    font-weight: bold;
-    margin-top: 30px;
-    box-shadow: 20px;
+    justify-content: center;
 }
-
-label{
-    padding: 2em;
-    margin: 2em;
-}
-
-input{
-    margin: 1em;
-    width: 50%;
+.field {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-columns: 1em;
+    margin-bottom: 1em;
 }
