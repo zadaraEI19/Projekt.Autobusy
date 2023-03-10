@@ -17,4 +17,75 @@ function zmiana() {
         document.getElementById("odjazd2").innerHTML = "";
     }
 }
-
+function lettersOnly(evt) {
+    evt = (evt) ? evt : event;
+    var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode :
+       ((evt.which) ? evt.which : 0));
+    if (charCode > 31 && (charCode < 65 || charCode > 90) &&
+       (charCode < 97 || charCode > 122)) {
+       return false;
+    }
+    return true;
+}
+function emaill(){
+    if(document.forms.formularz.email.value.length < 5) {
+      document.getElementById("mail").innerHTML = "Zbyt krótki!";
+      document.getElementById("mail").style.color = "red";
+      return false;
+    }
+  else if(document.forms.formularz.email.value.includes(".")==false && document.forms.formularz.email.value.includes("@")==false) {
+    document.getElementById("mail").innerHTML = "Nie ma kropki ani @!";
+    document.getElementById("mail").style.color = "red";
+    return false;
+  }
+  else if(document.forms.formularz.email.value.includes("@")==false) {
+    document.getElementById("mail").innerHTML = "Nie ma znaku @";
+    document.getElementById("mail").style.color = "red";
+    return false;
+  }
+  else if(document.forms.formularz.email.value.includes(".")==false) {
+    document.getElementById("mail").innerHTML = "Nie ma kropki";
+    document.getElementById("mail").style.color = "red";
+    return false;
+  }
+  else {
+    document.getElementById("mail").innerHTML = "Wszystko git!";
+    document.getElementById("mail").style.color = "green";
+    return true;
+  }
+}
+function nazwiskoo() {
+    if(document.forms.formularz.nazwisko.value.length == 0) {
+      document.getElementById("naz").innerHTML = "Wpisz nazwisko";
+      document.getElementById("naz").style.color = "red";
+      return false;
+    }
+    else if(document.forms.formularz.nazwisko.value.length < 2) {
+      document.getElementById("naz").innerHTML = "Zbyt krótkie!";
+      document.getElementById("naz").style.color = "red";
+      return false;
+    }
+    else {
+      document.getElementById("naz").innerHTML = "Wszystko git";
+      document.getElementById("naz").style.color = "green";
+      return true;
+    }
+  }
+  function imiee() {
+    if(document.forms.formularz.imie.value.length == 0) {
+      document.getElementById("imi").innerHTML = "Wpisz imię";
+      document.getElementById("imi").style.color = "red";
+      return false;
+    }
+    else if(document.forms.formularz.imie.value.length < 3) {
+      document.getElementById("imi").innerHTML = "Zbyt krótkie!";
+      document.getElementById("imi").style.color = "red";
+      return false;
+    }
+    else {
+      document.getElementById("imi").innerHTML = "Wszystko git";
+      document.getElementById("imi").style.color = "green";
+      return true;
+    }
+  }
+  
