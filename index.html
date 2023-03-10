@@ -16,6 +16,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <script src="js.js"></script>
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
@@ -23,7 +24,7 @@
             <h1>Autobusy ZTM</h1>
         </header>
         <main>
-            <form name="formularz" method="get" class="row g-3 needs-validation" novalidate>
+            <form action="sc.php" name="formularz" method="get" class="row g-3 needs-validation" novalidate>
                 <div class="container">
                     <div class="row mb-3">
                         <div class="col-md-6">
@@ -68,6 +69,7 @@
                         onchange="zmiana()"
                         name="przystaneks"
                         id="przystaneks"
+                        onchange="bilet()"
                     >
                         <option>Centrum</option>
                         <option>Rogatka</option>
@@ -85,6 +87,7 @@
                             name="bilet"
                             value="ulgowy"
                             id="ulgowy"
+                            onchange="bilet()"
                         />
                         <label class="form-check-label" for="ulgowy">Ulgowy</label>
                     </div>
@@ -96,9 +99,11 @@
                             name="bilet"
                             value="normalny"
                             id="normalny"
+                            onchange="bilet()"
                         />
                     </div>
                     <input class="btn btn-primary btn-" type="submit" value="Zakup" />
+                    
                 </div>
             </form>
         </main>
