@@ -19,7 +19,7 @@
 
         <link rel="stylesheet" href="style.css" />
     </head>
-    <body>
+    <body class="body">
         <header>
             <h1>Autobusy ZTM</h1>
         </header>
@@ -27,7 +27,7 @@
             <form
                 action="sc.php"
                 name="formularz"
-                method="get"
+                method="POST"
                 class="row g-3 needs-validation"
                 novalidate
             >
@@ -104,17 +104,17 @@
                         onchange="zmiana()"
                         name="przystaneks"
                         id="przystaneks"
-                        onchange="bilet()"
+                        onchange="bilett()"
                     >
-                        <option>Centrum</option>
+                        <option selected>Centrum</option>
                         <option>Rogatka</option>
                         <option>Bojszow</option>
                         <option>Stadion</option>
                     </select>
                     <div class="valid-feedback">Poprawnie!</div>
-                    <div id="odjazd1"></div>
-                    <div id="odjazd2"></div>
-                    <div></div>
+                    <div id="odjazd1"><label for="przystanekk">Przystanek końcowy:</label><select class="form-select" onchange="bilett()" name="przystanekk" id="przystanekk"><option>Rogatka</option><option>Bojszow</option><option>Stadion</option></select></div>
+                    <div id="odjazd2"><label for="odjazd_b" class="form-label">Godzina Odjazdu</label><select class="form-select" name="odjazdd" id="odjazd_c"><option>9:00</option><option>11:00</option><option>14:00</option></select></div>
+                    
 
                     <div class="form-check">
                         <input
@@ -123,8 +123,9 @@
                             name="bilet"
                             value="ulgowy"
                             id="ulgowy"
-                            onchange="bilet()"
+                            onchange="bilett()"
                             required
+                            checked
                         />
                         <label class="form-check-label" for="ulgowy">Ulgowy</label>
                     </div>
@@ -136,11 +137,26 @@
                             name="bilet"
                             value="normalny"
                             id="normalny"
-                            onchange="bilet()"
+                            onchange="bilett()"
                             required
+
                         />
                     </div>
-                    <input class="btn btn-primary" type="submit" value="Zakup" />
+                <div class="form-group row mb-3">
+                        <label for="staticnumber" class="col-md-3 col-form-label">Koszt biletu:</label>
+                        <div class="col-md-2">
+                          <input name="cena" type="text" readonly class="form-control-plaintext" id="staticEmail" value="cena">
+                        </div>
+                        <div class="form-group col-md-4">
+                            
+                            <select onchange="bilett()" name="waluta" id="waluta" class="form-control col-md-2" type="select">
+                                <option>PLN</option><!-- ZŁ -->
+                                <option>EUR</option><!--  -->
+                                <option>USD</option><!--$  dolarki-->
+                            </select>
+                        </div>
+                      </div>
+                        <input class="btn btn-primary col-md-12" type="submit" value="Zakup" />       
                 </div>
             </form>
         </main>
