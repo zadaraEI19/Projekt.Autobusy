@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text&family=Raleway:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text&family=Raleway:wght@400;500&family=Roboto&display=swap');
 * {
-    font-family: "Century Gothic";
+    font-family:'Courier New', Courier, monospace;
+    font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
 }
-body {
+.body {
     background-image: url("images/3.jpg");
     background-size: cover;
     background-position: center;
@@ -34,3 +37,10 @@ main {
     grid-template-columns: 1em;
     margin-bottom: 1em;
 }
+
+form{
+    background-color: rgba(255, 255, 255, 0.298);
+    border-radius: 1em;
+    padding:1em;
+}
+
