@@ -47,7 +47,7 @@
 <?php
 #Łączy z bazą danych, wyświetla potwierdzenie zakupu.
 
-$link = @mysqli_connect("localhost","root","","test");
+$link = @mysqli_connect("localhost","root","","projekt_autobusy");
 if (!$link) {
     echo "Błąd: ".mysqli_connect_error();
 }
