@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Golos+Text&family=Raleway:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Golos+Text&family=Raleway:wght@400;500&family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text&family=Raleway:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text&family=Raleway:wght@400;500&family=Roboto&display=swap");
 * {
-    font-family:'Courier New', Courier, monospace;
-    font-family: 'Raleway', sans-serif;
+    font-family: "Courier New", Courier, monospace;
+    font-family: "Raleway", sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -15,15 +15,17 @@
 }
 
 header {
-    padding: 2em;
+    padding: 4em;
     text-align: center;
     justify-content: center;
+    background-color: rgb(255, 255, 255);
+
+    border-bottom: 1px solid rgb(163, 163, 163);
 }
 form {
     display: grid;
     font-family: "Century Gothic";
     background-color: rgba(255, 255, 255, 0);
-    border: 5px so;
 }
 main {
     align-items: center;
@@ -38,13 +40,35 @@ main {
     margin-bottom: 1em;
 }
 
-form{
+form {
     background-color: rgba(255, 255, 255, 0.298);
     border-radius: 1em;
-    padding:1em;
+    padding: 3em;
 }
 
-.opinia{
+.opinia {
     width: 500px;
     height: 500px;
+}
+footer {
+    padding: 5em;
+    background-color: rgb(41, 41, 41);
+    text-align: center;
+    color: white;
+    border-top: 3px solid rgb(124, 124, 124);
+}
+.logo {
+    position: absolute;
+    left: 2em;
+    top: 3em;
+    height: 10%;
+    width: 10%;
+}
+.carousel {
+    border-bottom: 1px solid rgb(124, 124, 124);
+}
+.kontakt {
+    display: flex;
+    justify-content: right;
+    align-items: right;
 }
