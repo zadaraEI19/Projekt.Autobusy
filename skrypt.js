@@ -55,17 +55,29 @@ function bilett() {
     waluta = document.forms.formularz.waluta.value;
     if(waluta == "PLN") {
         transfer = 1;
-        document.forms.formularz.cena.value = (koszt * transfer).toFixed(2) + " zł";  
+		cena = (koszt * transfer).toFixed(2) + " zł";
+        document.forms.formularz.cena.value = cena;  
     }
     else if(waluta == "USD") {
         transfer = 0.23;
-        document.forms.formularz.cena.value = (koszt * transfer).toFixed(2) + " $";  
+        cena = (koszt * transfer).toFixed(2) + " $";
+        document.forms.formularz.cena.value = cena;    
     }
     else if(waluta == "EUR"){
         transfer = 0.21;
-        document.forms.formularz.cena.value = (koszt * transfer).toFixed(2) + " €";  
+        cena = (koszt * transfer).toFixed(2) + " €";
+        document.forms.formularz.cena.value = cena;  
     } 
-    console.log(document.forms.formularz.waluta.value);
+	
+	sessionStorage.setItem("imie", document.forms.formularz.imie.value);
+	sessionStorage.setItem("nazwisko", document.forms.formularz.nazwisko.value);
+	sessionStorage.setItem("email", document.forms.formularz.email.value);
+	sessionStorage.setItem("ulga", document.forms.formularz.bilet.value);
+	sessionStorage.setItem("z", document.forms.formularz.przystaneks.value);
+	sessionStorage.setItem("do", document.forms.formularz.przystanekk.value);
+	sessionStorage.setItem("cena", cena);
+
+
 }
 
   // Example starter JavaScript for disabling form submissions if there are invalid fields
@@ -101,4 +113,4 @@ function lettersOnly(evt) {
        return false;
     }
     return true;
-  }
+}
