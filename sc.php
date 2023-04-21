@@ -15,17 +15,17 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Bilet Zakupiony!</title>
 
-        <link rel="stylesheet" href="styleodp.css" />
+        <link rel="stylesheet" href="styledzk.css" />
     </head>
-    <body>
+    <body class="body">
         <header>
             <h1>Dziękujemy za zakup!</h1>
         </header>
-        <main>
-            <div class="container">
-            <form action="index.html" method="POST">
+        <main class="transition-fade">
+            <div class="container transition-fade">
+            <form action="index.html" method="POST" class="col-md-6 container">
                 <h2>Twój bilet</h2>
                 
                 <div class="input-group mb-3">
@@ -54,7 +54,9 @@
                     <span class="input-group-text">Cena biletu: </span>
                     <div class="form-control" id="Cena" name="cena"></div>
                 </div>
-                <input class="btn btn-primary col-md-6" type="submit" value="Powrót do strony głównej" />   
+                <div class="d-flex justify-content-center">
+                <input class="btn btn-primary" type="submit" value="Powrót do strony głównej" />   
+                </div>
             </form>
         </div>
         </main>
@@ -145,6 +147,3 @@
       
 </body>
 </html>
-
-
-
