@@ -25,12 +25,36 @@
         </header>
         <main>
             <div class="container">
-            <form action="opinia.php" method="POST">
-                <div class="form-group row g-3">
-                    <label for="staticEmail" class="col-md-6 col-form-label">Jeśli masz jakieś pytania lub chciałbyś wyrazić opinie napisz ją tutaj:</label>
-                <div class="form-group row g-3">
-                    <textarea class="opinia" name="opinia"></textarea>
-                <input class="btn btn-primary col-md-6" type="submit" value="Wyślij" />   
+            <form action="index.html" method="POST">
+                <h2>Twój bilet</h2>
+                
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Imię: </span>
+                    <div class="form-control" id="imie" name="imie"></div>
+                    <span class="input-group-text">Nazwisko: </span>
+                    <div class="form-control" id="nazwisko" name="nazwisko"></div>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Email: </span>
+                    <div class="form-control" id="email" name="email"></div>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Przystanek początkowy: </span>
+                    <div class="form-control" id="przystaneks" name="przystaneks"></div>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Przystanek końcowy: </span>
+                    <div class="form-control" id="przystanekk" name="przystanekk"></div>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Typ biletu: </span>
+                    <div class="form-control" id="bilet" name="bilet"></div>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Cena biletu: </span>
+                    <div class="form-control" id="Cena" name="cena"></div>
+                </div>
+                <input class="btn btn-primary col-md-6" type="submit" value="Powrót do strony głównej" />   
             </form>
         </div>
         </main>
@@ -41,77 +65,86 @@
             crossorigin="anonymous"
         ></script>
         <script src="skrypt.js"></script>
-      
-            </body>
-</html>
-<?php
-#Łączy z bazą danych, wyświetla potwierdzenie zakupu.
-
-$link = @mysqli_connect("localhost","root","","projekt_autobusy");
-if (!$link) {
-    echo "Błąd: ".mysqli_connect_error();
-}
-else {
-    echo "Łączenie z bazą danych udane!<br>";
-}
-
-$imie = $_POST["imie"];
-$nazwisko = $_POST["nazwisko"];
-$odjazd = $_POST["odjazdd"];
-$bilet = $_POST["bilet"];
-$start = $_POST["przystaneks"];
-$koniec = $_POST["przystanekk"];
-$waluta = $_POST["waluta"];
-
-#Sprawdza odległości między przystankami oraz sprawdza ulgę, i na ich podstawie
-#wylicza cenę biletu.
-
-$g1 = 0;
-$g2 = 0;
-
-if($start == "Centrum") {
-    $g1=4;
-}
-elseif ($start== "Rogatka") {
-    $g1=3;
-}
-elseif ($start == "Bojszow") {
-    $g1=2;
-}
-
-if($koniec == "Rogatka") {
-    $g2=3;
-}
-elseif ($koniec == "Bojszow") {
-    $g2=2;
-}
-elseif ($koniec == "Stadion") {
-    $g2=1;
-}
-
-if($bilet == "ulgowy") {
-    $ulga = 2;
-}
-else {
-    $ulga = 3;
-}
-$koszt = ($g1 - $g2) * $ulga;
-
-#Tworzy zapytanie i wysyła dane z formularza do bazy danych.
-if($waluta == "PLN") {
-    $query = "insert into projekt_autobusy.klienci (imie,nazwisko,bus,godziny,koszt_biletu,waluta) VALUES('".$imie."','".$nazwisko."',1,'".$odjazd."',".$koszt.",'Złotych')";
-}
-else if($waluta == "EUR") {
-    $koszt *= 0.21;
-    $query = "insert into projekt_autobusy.klienci (imie,nazwisko,bus,godziny,koszt_biletu,waluta) VALUES('".$imie."','".$nazwisko."',1,'".$odjazd."',".$koszt.",'Euro')";
-}
-else if($waluta == "USD") {
-    $koszt *= 0.23;
-    $query = "insert into projekt_autobusy.klienci (imie,nazwisko,bus,godziny,koszt_biletu,waluta) VALUES('".$imie."','".$nazwisko."',1,'".$odjazd."',".$koszt.",'Dolary')";
-}
-$result = mysqli_query($link, $query);
-echo "Bilet użytkownika: ".$imie." ".$nazwisko." został pomyślnie zarejestrowany!";
-?>
+        <script>
+            document.getElementById("imie").innerHTML = sessionStorage.getItem('imie');
+            document.getElementById("nazwisko").innerHTML = sessionStorage.getItem('nazwisko');
+            document.getElementById("email").innerHTML = sessionStorage.getItem('email');
+            document.getElementById("przystaneks").innerHTML = sessionStorage.getItem('z');
+            document.getElementById("przystanekk").innerHTML = sessionStorage.getItem('do');
+            document.getElementById("bilet").innerHTML = sessionStorage.getItem('ulga');
+            document.getElementById("Cena").innerHTML = sessionStorage.getItem('cena');
         </script>
-    </body>
+        <?php
+        #Łączy z bazą danych, wyświetla potwierdzenie zakupu.
+        
+        $link = @mysqli_connect("localhost","root","","projekt_autobusy");
+        if (!$link) {
+            echo "Błąd: ".mysqli_connect_error();
+        }
+        else {
+            echo "Łączenie z bazą danych udane!<br>";
+        }
+        
+        $imie = $_POST["imie"];
+        $nazwisko = $_POST["nazwisko"];
+        $odjazd = $_POST["odjazdd"];
+        $bilet = $_POST["bilet"];
+        $start = $_POST["przystaneks"];
+        $koniec = $_POST["przystanekk"];
+        $waluta = $_POST["waluta"];
+        
+        #Sprawdza odległości między przystankami oraz sprawdza ulgę, i na ich podstawie
+        #wylicza cenę biletu.
+        
+        $g1 = 0;
+        $g2 = 0;
+        
+        if($start == "Centrum") {
+            $g1=4;
+        }
+        elseif ($start== "Rogatka") {
+            $g1=3;
+        }
+        elseif ($start == "Bojszow") {
+            $g1=2;
+        }
+        
+        if($koniec == "Rogatka") {
+            $g2=3;
+        }
+        elseif ($koniec == "Bojszow") {
+            $g2=2;
+        }
+        elseif ($koniec == "Stadion") {
+            $g2=1;
+        }
+        
+        if($bilet == "ulgowy") {
+            $ulga = 2;
+        }
+        else {
+            $ulga = 3;
+        }
+        $koszt = ($g1 - $g2) * $ulga;
+        
+        #Tworzy zapytanie i wysyła dane z formularza do bazy danych.
+        if($waluta == "PLN") {
+            $query = "insert into projekt_autobusy.klienci (imie,nazwisko,bus,godziny,koszt_biletu,waluta) VALUES('".$imie."','".$nazwisko."',1,'".$odjazd."',".$koszt.",'Złotych')";
+        }
+        else if($waluta == "EUR") {
+            $koszt *= 0.21;
+            $query = "insert into projekt_autobusy.klienci (imie,nazwisko,bus,godziny,koszt_biletu,waluta) VALUES('".$imie."','".$nazwisko."',1,'".$odjazd."',".$koszt.",'Euro')";
+        }
+        else if($waluta == "USD") {
+            $koszt *= 0.23;
+            $query = "insert into projekt_autobusy.klienci (imie,nazwisko,bus,godziny,koszt_biletu,waluta) VALUES('".$imie."','".$nazwisko."',1,'".$odjazd."',".$koszt.",'Dolary')";
+        }
+        $result = mysqli_query($link, $query);
+        echo "Użytkownik: ".$imie." ".$nazwisko." został pomyślnie zarejestrowany!";
+        ?>     
+      
+</body>
 </html>
+
+
+
