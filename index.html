@@ -17,155 +17,83 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
 
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="stylemain.css" />
     </head>
-    <body class="body">
+    <body>
         <header>
-            <h1>Autobusy ZTM</h1>
+          <img src="images/logo.png" class="logo d-block w-1">
+            <h1>Dziękujemy za zakup!</h1>
         </header>
+
+  <div id="carouselExampleDark" class="carousel carousel-dark slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="images/IMG_6434.jpg.webp" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Zaufanie</h5>
+        <p>Jeśmy godną zaufania firmą z wieloletnim doświadczeniem</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="images/IMG_8723-768x512.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Odpowiedzialność</h5>
+        <p>Jeseśmy w pełni odpowiedzalni za to co robimy</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/autobusy-miejskie-urbino-12-cng-solaris.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-primary-emphasis">Bezpieczeństwo</h5>
+        <p class="">Nasze systemy bezpieczeństwa są na najwyższym poziomie</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
         <main>
-            <form
-                action="sc.php"
-                name="formularz"
-                method="POST"
-                class="row g-3 needs-validation"
-                novalidate
-            >
+            
+            <form action="opinia.php" method="POST" name="formularzodp">
                 <div class="container">
-                    <div class="row mb-3">
-                        <div class="col-md-6">
-                            <div id="imi"></div>
-                            <label for="validationCustom00" class="form-label">Imię</label>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                fill="currentColor"
-                                class="bi bi-person"
-                                viewBox="0 0 16 16"
-                            >
-                                <path
-                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
-                                />
-                            </svg>
-                            <input
-                                onkeyup="imiee()"
-                                class="form-control"
-                                name="imie"
-                                id="validationCustom00"
-                                onkeypress="return lettersOnly(event)"
-                                type="text"
-                                required
-                            />
-                            <div class="valid-feedback">Poprawnie!</div>
-                        </div>
-                        <div class="col-md-6">
-                            <div id="naz"></div>
-                            <label for="nazwisko" class="form-label">Nazwisko</label>
-                            <input
-                                class="form-control"
-                                onkeyup="nazwiskoo()"
-                                onkeypress="return lettersOnly(event)"
-                                name="nazwisko"
-                                id="validationCustom01"
-                                type="text"
-                                required
-                            />
-                        </div>
-                        <div class="valid-feedback">Poprawnie!</div>
-                    </div>
-                    <div id="mail"></div>
-                    <label for="email">Email</label>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-envelope"
-                        viewBox="0 0 16 16"
-                    >
-                        <path
-                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
-                        />
-                    </svg>
-                    <input
-                        class="form-control"
-                        name="email"
-                        id="email"
-                        onkeyup="emaill()"
-                        type="email"
-                        required
-                    />
-                    <div class="valid-feedback">Poprawnie!</div>
-                    <label class="form-label" for="przystaneks">Przystanek początkowy:</label>
-
-                    <select
-                        class="form-select"
-                        onchange="zmiana()"
-                        name="przystaneks"
-                        id="przystaneks"
-                        onchange="bilett()"
-                    >
-                        <option selected>Centrum</option>
-                        <option>Rogatka</option>
-                        <option>Bojszow</option>
-                        <option>Stadion</option>
-                    </select>
-                    <div class="valid-feedback">Poprawnie!</div>
-                    <div id="odjazd1"><label for="przystanekk">Przystanek końcowy:</label><select class="form-select" onchange="bilett()" name="przystanekk" id="przystanekk"><option>Rogatka</option><option>Bojszow</option><option>Stadion</option></select></div>
-                    <div id="odjazd2"><label for="odjazd_b" class="form-label">Godzina Odjazdu</label><select class="form-select" name="odjazdd" id="odjazd_c"><option>9:00</option><option>11:00</option><option>14:00</option></select></div>
-                    
-
-                    <div class="form-check">
-                        <input
-                            class="form-check-input"
-                            type="radio"
-                            name="bilet"
-                            value="ulgowy"
-                            id="ulgowy"
-                            onchange="bilett()"
-                            required
-                            checked
-                        />
-                        <label class="form-check-label" for="ulgowy">Ulgowy</label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label" for="normalny">Normalny</label>
-                        <input
-                            class="form-check-input"
-                            type="radio"
-                            name="bilet"
-                            value="normalny"
-                            id="normalny"
-                            onchange="bilett()"
-                            required
-
-                        />
+                <div class="form-group row mb-3">
+                    <div class="col-md-12"></div>
+                    <label for="opinia" class="col-md-12 col-form-label"><h2>Jeśli masz jakieś pytania <br>lub chciałbyś wyrazić opinie napisz ją tutaj:</h2></label>
                     </div>
                 <div class="form-group row mb-3">
-                        <label for="staticnumber" class="col-md-3 col-form-label">Koszt biletu:</label>
-                        <div class="col-md-2">
-                          <input name="cena" type="text" readonly class="form-control-plaintext" id="staticEmail" value="cena">
-                        </div>
-                        <div class="form-group col-md-4">
-                            
-                            <select onchange="bilett()" name="waluta" id="waluta" class="form-control col-md-2" type="select">
-                                <option>PLN</option><!-- ZŁ -->
-                                <option>EUR</option><!--  -->
-                                <option>USD</option><!--$  dolarki-->
-                            </select>
-                        </div>
-                      </div>
-                        <input class="btn btn-primary col-md-12" type="submit" value="Zakup" />       
+                    <div class="col-md-12 d-flex">
+                    <textarea class="opinia" name="opinia" rows="30"></textarea>
                 </div>
+                </div>
+                <input class="btn btn-primary col-md-12" type="submit" value="Wyślij" />  
+            </div> 
             </form>
+        </div>
         </main>
-        <footer></footer>
+        <footer>Wszystkie prawa zastrzeżone &copy 2023 r.
+          <div class="kontakt">
+          kontakt:<br>
+          Mateusz Zadara<br>
+          Mateusz Pieter<br>
+          Daniel Nocoń<br>
+        </div>
+        </footer>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"
         ></script>
         <script src="skrypt.js"></script>
-    </body>
+            </body>
 </html>
