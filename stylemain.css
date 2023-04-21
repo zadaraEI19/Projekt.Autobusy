@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text&family=Raleway:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text&family=Raleway:wght@400;500&family=Roboto&display=swap");
+* {
+    font-family: "Courier New", Courier, monospace;
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.body {
+    background-image: url("images/3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+header {
+    padding: 4em;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+
+    border-bottom: 1px solid rgb(163, 163, 163);
+}
+form {
+    display: grid;
+    font-family: "Century Gothic";
+    background-color: rgba(255, 255, 255, 0);
+}
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.field {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-columns: 1em;
+    margin-bottom: 1em;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.298);
+    border-radius: 1em;
+    padding: 3em;
+}
+
+
+footer {
+    padding: 5em;
+    background-color: rgb(41, 41, 41);
+    text-align: center;
+    color: white;
+    border-top: 3px solid rgb(124, 124, 124);
+}
+.logo {
+    position: absolute;
+    left: 2em;
+    top: 3em;
+    width: 160px;
+    height: 80px;
+}
+.carousel {
+    border-bottom: 1px solid rgb(124, 124, 124);
+}
+.kontakt {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+}
