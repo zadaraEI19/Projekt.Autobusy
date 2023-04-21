@@ -21,8 +21,8 @@
     </head>
     <body>
         <header>
-          <img src="images/logo.png" class="logo d-block w-1">
-            <h1>Dziękujemy za zakup!</h1>
+          <img src="images/logo.png" class="logo d-block">
+            <h1>Strona główna</h1>
         </header>
 
   <div id="carouselExampleDark" class="carousel carousel-dark slide">
@@ -63,20 +63,23 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-        <main>
-            
+        <main class="p-3">
+        <a href="form.html" class="btn btn-primary col-md-4 p-3 color-purple" role="button">Kup bilet</a>
+
             <form action="opinia.php" method="POST" name="formularzodp">
-                <div class="container">
+                <div class="container col-md-8 d-grid justify-content-center">
                 <div class="form-group row mb-3">
-                    <div class="col-md-12"></div>
-                    <label for="opinia" class="col-md-12 col-form-label"><h2>Jeśli masz jakieś pytania <br>lub chciałbyś wyrazić opinie napisz ją tutaj:</h2></label>
+                    <div class="d-flex justify-content-center"></div>
+                    <label for="opinia" class=" col-form-label"><h4>Jeśli masz jakieś pytania <br>lub chciałbyś wyrazić opinie napisz ją tutaj:</h4></label>
                     </div>
-                <div class="form-group row mb-3">
-                    <div class="col-md-12 d-flex">
-                    <textarea class="opinia" name="opinia" rows="30"></textarea>
+                <div class="d-flex justify-content-center form-group row mb-3">
+                  
+                    <textarea class="opinia" name="opinia" rows="5"></textarea>
+                
                 </div>
-                </div>
-                <input class="btn btn-primary col-md-12" type="submit" value="Wyślij" />  
+                <div class="d-flex justify-content-center">
+                <input class="btn btn-primary col-md-8" type="submit" value="Wyślij" />  
+              </div>
             </div> 
             </form>
         </div>
